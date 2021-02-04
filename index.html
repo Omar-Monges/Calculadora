@@ -8,29 +8,27 @@
 </head>
 <body>
     <main>
-        <form action="#">
-            <input type="text" name="Display" id="display" class="display">
-            <div class="button-container" id="button-container">
-                <button class="c">C</button>
-                <button class="delete">Borrar</button>
-                <button value="9" class="number">9</button>
-                <button value="8" class="number">8</button>
-                <button value="7" class="number">7</button>
-                <button value="+" class="operation">+</button>
-                <button value="6" class="number">6</button>
-                <button value="5" class="number">5</button>
-                <button value="4" class="number">4</button>
-                <button value="-" class="operation">-</button>
-                <button value="3" class="number">3</button>
-                <button value="2" class="number">2</button>
-                <button value="1" class="number">1</button>
-                <button value="*" class="operation">*</button>
-                <button value="," class="number">.</button>
-                <button value="0" class="number">0</button>
-                <button type="submit" class="result">=</button>
-                <button value="" class="operation">/</button>
-            </div>
-        </form>
+        <input type="text" name="Display" id="display" disabled class="display">
+        <div class="button-container" id="button-container">
+            <button class="c" value="c" onclick="getData(this)">C</button>
+            <button class="delete" id="del">Borrar</button>
+            <button value="9" class="number" onclick="getData(this)">9</button>
+            <button value="8" class="number" onclick="getData(this)">8</button>
+            <button value="7" class="number" onclick="getData(this)">7</button>
+            <button value="+" class="operation" onclick="getData(this)">+</button>
+            <button value="6" class="number" onclick="getData(this)">6</button>
+            <button value="5" class="number" onclick="getData(this)">5</button>
+            <button value="4" class="number" onclick="getData(this)">4</button>
+            <button value="-" class="operation" onclick="getData(this)">-</button>
+            <button value="3" class="number" onclick="getData(this)">3</button>
+            <button value="2" class="number" onclick="getData(this)">2</button>
+            <button value="1" class="number" onclick="getData(this)">1</button>
+            <button value="*" class="operation" onclick="getData(this)">*</button>
+            <button value="," class="number" onclick="getData(this)">.</button>
+            <button value="0" class="number" onclick="getData(this)">0</button>
+            <button value="=" class="result" onclick="getData(this)">=</button>
+            <button value="/" class="operation" onclick="getData(this)">/</button>
+        </div>
     </main>
     <script src="./js/logica.js"></script>
 </body>
