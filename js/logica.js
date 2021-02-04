@@ -1,6 +1,6 @@
 const screen = document.querySelector('#display'),
       btns = document.getElementById("button-container");
-let data = null, x = 0;
+let data = null, x = 0, opc;
 const getData = (ref) => {
     let value = ref.value;
     // data = data == undefined ? value : console.log(parseInt(data += value));
@@ -12,20 +12,51 @@ const getData = (ref) => {
             clear();
             data = 0;
         } else if (value === "+") {
-            x += parseInt(data);
+            clear();
+            x += data;
             data = 0;
+            opc = value;
         } else if (value === "-") {
-            x = restar(parseInt(data), x);
+            clear();
+            x = data;
             data = 0;
-            console.log(x);
+            opc = value;
         } else if (value === "*") {
-            console.log("Multi");
+            clear();
+            x = data;
+            data = 0;
+            opc = value;
         } else if (value === "/") {
-            console.log("Dividimos");
+            clear();
+            x = data;
+            data = 0;
+            opc = value;
         } else if (value === "=") {
             clear();
-            screen.value = restar(x, data);
-            x = 0;
+            switch (opc) {
+                case '+':
+                    screen.value = sumar(x, data);
+                    data = 0;
+                    x = 0;
+                    break;
+                case '-':
+                    screen.value = restar(x, data);
+                    data = 0;
+                    x = 0;
+                    break;
+                case '*':
+                    screen.value = multiplicar(x, data);
+                    data = 0;
+                    x = 0;
+                    break;
+                case '/':
+                    screen.value = dividir(x, data);
+                    data = 0;
+                    x = 0;
+                    break;
+                default:
+                    console.log("Nos fui"); 
+            }
         }
     }
 }
@@ -37,4 +68,10 @@ const sumar = (a, b) => {
 }
 const restar = (a, b) => {
     return a - b;
+}
+const multiplicar = (a, b) => {
+    return a * b;
+}
+const dividir = (a, b) => {
+    return a / b;
 }
