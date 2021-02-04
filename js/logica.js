@@ -1,25 +1,28 @@
 const screen = document.querySelector('#display'),
       btns = document.getElementById("button-container");
-let data;
+let data = null, x = 0;
 const getData = (ref) => {
     let value = ref.value;
-    data = data == undefined ? value : parseInt(data += value);
+    // data = data == undefined ? value : console.log(parseInt(data += value));
     screen.value += value;
-    if (parseInt(value) || parseInt(value) == 0) {
-        return parseInt(data);
+    if (parseInt(value) || value == "0") {
+        data = data == null ? value : parseInt(data += value);
     } else {
-    console.log(value);
         if (value === "c"){
             clear();
+            data = 0;
         } else if (value === "+") {
-            clear();
-            console.log("Sumamos");
+            x += parseInt(data);
+            data = 0;
         } else if (value === "-") {
             console.log("Restamos");
         } else if (value === "*") {
             console.log("Multi");
         } else if (value === "/") {
             console.log("Dividimos");
+        } else if (value === "=") {
+            clear();
+            screen.value = sumar(x, data);
         }
     }
 }
