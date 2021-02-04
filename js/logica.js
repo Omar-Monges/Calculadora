@@ -15,14 +15,17 @@ const getData = (ref) => {
             x += parseInt(data);
             data = 0;
         } else if (value === "-") {
-            console.log("Restamos");
+            x = restar(parseInt(data), x);
+            data = 0;
+            console.log(x);
         } else if (value === "*") {
             console.log("Multi");
         } else if (value === "/") {
             console.log("Dividimos");
         } else if (value === "=") {
             clear();
-            screen.value = sumar(x, data);
+            screen.value = restar(x, data);
+            x = 0;
         }
     }
 }
@@ -31,4 +34,7 @@ const clear = () => {
 }
 const sumar = (a, b) => {
     return a + b;
+}
+const restar = (a, b) => {
+    return a - b;
 }
