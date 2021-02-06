@@ -23,7 +23,7 @@ const getData = (ref) => {
             opc = value;
         } else if (value === "*") {
             clear();
-            x = x != null ? x *= data : x = data;
+            x = x ? x *= data : x = data;
             data = 0;
             opc = value;
         } else if (value === "/") {
